@@ -2,6 +2,8 @@
 
 ### Local AI Agent Host · Build, Manage & Connect AI Agents
 
+![ORDIMENS — Local AI Agent Host](https://github.com/ZETALVX/ORDIMENS/raw/refs/heads/main/ORDIMENS-ZETALVX.png)
+
 **ORDIMENS** is a locally hosted application for creating, configuring, testing, and connecting AI agents to language models, knowledge bases, speech systems, games, and external software.
 
 It provides a browser-based management interface, so agents and their integrations can be managed from one place rather than building a separate management system for each project. ORDIMENS can be accessed from other devices on your local network when secure access is configured.
