@@ -81,7 +81,7 @@ As an early release candidate developed independently, ORDIMENS may contain bugs
 
 **ORDIMENS 0.5.88 RC1 is available as a compiled Linux release for Patreon members.**
 
-**[Get ORDIMENS on Patreon](INSERT_PATREON_RELEASE_URL)**
+**[Get ORDIMENS on Patreon]([PATREON_RELEASE_URL](https://www.patreon.com/Zetalvx/posts/ordimens-173839463))**
 
 The Patreon release includes the application package and accompanying user documentation. This repository does **not** host the application binary, its source code, or the private build tools.
 
