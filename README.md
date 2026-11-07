@@ -88,10 +88,10 @@ Extract the archive, open a terminal in the extracted directory and run:
 
 After installation:
 
-    /usr/bin/ordimens start
-    /usr/bin/ordimens status
-    /usr/bin/ordimens stop
-    /usr/bin/ordimens logs
+    ordimens start
+    ordimens status
+    ordimens stop
+    ordimens logs
 
 ### Windows x64
 
