@@ -1,122 +1,154 @@
 # ORDIMENS
 
-### Local AI Agent Host · Build, Manage & Connect AI Agents
+### Create, Manage & Connect AI Agents — Linux and Windows
 
 ![ORDIMENS — Local AI Agent Host](https://github.com/ZETALVX/ORDIMENS/raw/refs/heads/main/ORDIMENS-ZETALVX.png)
 
-**ORDIMENS** is a locally hosted application for creating, configuring, testing, and connecting AI agents to language models, knowledge bases, speech systems, games, and external software.
+ORDIMENS is a locally hosted platform for creating, configuring, testing and connecting AI agents to language models, knowledge bases, speech systems, games and external software.
 
-It provides a browser-based management interface, so agents and their integrations can be managed from one place rather than building a separate management system for each project. ORDIMENS can be accessed from other devices on your local network when secure access is configured.
+Manage your agents through a browser on the host computer, or from another device on your local network when LAN access is configured. Use compatible local models or connect to remote endpoints.
 
-> **Current release:** 0.5.88 RC1 · **Platform:** Linux x86-64 · **Distribution:** Compiled application for Patreon members
->
-> **Source availability:** ORDIMENS is proprietary and closed-source. This GitHub repository is the public information hub, **not** the application source repository. No source code or compiled application is provided here.
+**Current release:** 0.5.99 RC1  
+**Platforms:** Linux x86-64 and Windows x64  
+**Distribution:** Compiled application for Patreon members
 
-## What can ORDIMENS do?
+This is the public information repository. ORDIMENS is proprietary and closed-source. Application binaries, source code and private build tools are not hosted here.
 
-### AI agents and Playground
+## Character Studio
 
-- Create and configure multiple agents with individual instructions, parameters, and memory.
-- Select the model used by each agent.
-- Test configurations and conversations in the integrated Playground.
-- Manage agents through a central web interface.
+Create an agent around a personality, with optional AI assistance.
 
-### Local and remote models
+- Choose a robot avatar, an emoticon or upload your own image.
+- Select traits and describe your character, role or assistant.
+- Organise your description into editable instructions manually.
+- Alternatively, choose a configured LLM to propose a name, introduction and system prompt.
+- Review the proposal before accepting and saving it.
+- Configure the finished agent's models and capabilities separately.
 
-ORDIMENS supports configuring model connections through different backends, subject to model and runtime compatibility:
+The model writing the profile can be different from the model running the agent. Profile generation does not automatically replace voice, vision or listening assignments.
 
-| Backend / connection | Purpose |
+Avatars identify agents visually. Instructions guide responses. Game actions, tools, persistent world state and autonomous routines require support from the connected application.
+
+## Agents and Playground
+
+- Multiple agents with individual instructions and model assignments.
+- Generation settings, response limits and context budgets.
+- Conversation history and knowledge connections.
+- Integrated Playground for testing conversations.
+- Character Pack imports for compatible projects.
+
+Updates to existing Character Pack agents preserve their configured voice and other resource assignments while applying the selected LLM.
+
+## Model connections
+
+| Backend | Purpose |
 | --- | --- |
-| **llama.cpp** | Compatible local GGUF models |
-| **Transformers** | Compatible local model directories and architectures |
-| **OpenAI-compatible APIs** | Local or remote compatible services |
-| **Custom HTTP endpoints** | Configurable external model services |
+| llama.cpp | Compatible local GGUF models |
+| Transformers | Supported architectures and model directories |
+| OpenAI-compatible APIs | Compatible local or remote services |
+| Custom HTTP endpoints | Configurable external services |
 
-Some vision-enabled GGUF models may require a separate `mmproj` file. Support depends on the model architecture, format, runtime, and available hardware resources.
+Compatibility depends on model architecture, format, runtime and available hardware. Some vision-enabled GGUF models require an additional mmproj file.
 
-### Knowledge bases and RAG
+## Knowledge bases and RAG
 
-- Create document collections using uploaded documents or manually entered text.
-- Associate collections with agents.
-- Let agents retrieve relevant knowledge during interactions.
+Create document collections, upload documents or enter text, and connect reusable knowledge to individual agents.
 
-### Voice and speech
+Use cases include documentation assistants, specialised characters and other knowledge-driven applications.
 
-ORDIMENS includes configuration and integration support for speech capabilities, depending on the installed runtimes and models:
+## Voice and listening
 
-- **Text-to-Speech:** Qwen3-TTS, Chatterbox, Kokoro.
-- **Speech-to-Text:** Whisper / Faster-Whisper, Qwen ASR.
+Supported configurations include Qwen3-TTS, Chatterbox, Kokoro, Whisper, Faster-Whisper and Qwen ASR.
 
-Speech models and optional runtimes are **not bundled** with the application.
+Guided runtime preparation is available for supported engines. Runtime recipes and compatibility vary by platform. Model weights, voices and third-party licences must be checked separately.
 
-### APIs, games, and external applications
+## Games and external applications
 
-- Connect external clients to agents through APIs.
-- Use permission-scoped access tokens for integrations.
-- Import declarative **Character Packs** into the active server, including agent definitions and associated RAG knowledge.
+Connect software through the API and connection codes with configurable permissions.
 
-This makes ORDIMENS useful as an external AI host for interactive applications and games, including projects with AI-powered NPCs.
+Select specific agents using the searchable, collapsible selector, or grant access to all agents within the supported scope.
 
-### Administration
+Compatible applications can provide Character Packs containing predefined agents and associated knowledge.
 
-- Browser-based configuration and management.
-- Initial setup tools.
-- Runtime and model connection settings.
-- Backup, update, and log management.
-- Command-line controls for the installed service.
+Possible uses include NPCs, interactive characters, specialised assistants and applications requiring a shared agent host.
 
-## Current release — 0.5.88 RC1
+## Download
 
-| | |
-| --- | --- |
-| **Operating system** | Linux x86-64 |
-| **Status** | First release candidate |
-| **Package** | Compiled application with installation/update scripts |
-| **Documentation** | User guides distributed with the release |
-| **Availability** | Patreon members |
+[Download ORDIMENS on Patreon](https://www.patreon.com/Zetalvx/posts/ordimens-173839463)
 
-**The application does not include model weights, optional AI runtimes, or GPU drivers.** You must provide and configure compatible components yourself. RAM/VRAM requirements and performance vary with the selected models and settings.
+### Linux x86-64
 
-As an early release candidate developed independently, ORDIMENS may contain bugs or incomplete edge-case handling. Issue reports and reproducible feedback are welcome; I will work to provide support and address confirmed problems.
+Download:
 
-## Download and access
+ORDIMENS_0.5.99_rc1_Linux_x86_64.zip
 
-**ORDIMENS 0.5.88 RC1 is available as a compiled Linux release for Patreon members.**
+Extract the archive, open a terminal in the extracted directory and run:
 
-**[Download ORDIMENS on Patreon](https://www.patreon.com/Zetalvx/posts/ordimens-173839463)**
+    bash INSTALLA_ORDIMENS.sh
 
-The Patreon release includes the application package and accompanying user documentation. This repository does **not** host the application binary, its source code, or the private build tools.
+After installation:
 
-## In development
+    /usr/bin/ordimens start
+    /usr/bin/ordimens status
+    /usr/bin/ordimens stop
+    /usr/bin/ordimens logs
 
-The following are **planned / in progress**, not features included in the current Linux release:
+### Windows x64
 
-- **Windows version:** in the final stages of development, with a streamlined installer intended to make setup possible in just a few clicks.
-- **Unity 3D, Unreal Engine, and Godot plugins:** integrations being finalized to connect with ORDIMENS automatically and simplify adding intelligent NPCs to games and interactive applications.
+Download:
 
-Release dates and final capabilities will be announced when these components are ready.
+ORDIMENS_0_5_99_RC1_Windows_x64_Setup.exe
 
-## Example project — The Lantern Chronicles
+Run the Setup EXE and follow the installer. The same installer handles first installation and updates.
 
-**The Lantern Chronicles** is a separate experimental RPG project exploring AI-powered NPCs, agent personalities, and knowledge-driven interactions using an external agent host.
+Start ORDIMENS from the desktop or Start menu shortcut.
 
-The game, its demos, and its Character Packs are **distributed separately** and are **not included** with ORDIMENS 0.5.88 RC1.
+### Updating
 
-## Project updates and demonstrations
+Stop the running server before updating with an external installer. Closing the browser tab does not stop the server.
 
-A video walkthrough and further demonstrations are being prepared for the **[ZetaLvX YouTube channel](https://www.youtube.com/@zetalvx)**.
+Keep the existing installation location and preserve application data and optional model runtimes.
 
-## Licensing and third-party components
+Linux also supports the in-app ZIP update workflow with the compiled installation and update package.
 
-ORDIMENS is proprietary software. Public visibility of this repository does not grant permission to redistribute, modify, or reverse engineer the application beyond applicable law and the terms supplied with the release.
+English and Italian quick-start instructions accompany the release. Further help is available inside the application.
 
-AI models, voice models, runtimes, and other third-party components have their **own licenses and requirements**, which users must review separately.
+Compare your downloaded file with its entry in the supplied SHA256SUMS file. Checksums verify file integrity, not publisher identity.
+
+## Requirements and release status
+
+- Linux x86-64 or Windows x64.
+- A modern browser.
+- Suitable RAM and VRAM for local models, or access to a compatible remote provider.
+- Separately configured model weights, optional inference runtimes and GPU drivers.
+- Internet access where needed for downloads, runtime preparation or remote services.
+
+ORDIMENS is a release candidate. Compatibility and performance vary across models, runtimes and hardware.
+
+A locally hosted application can still use remote providers. Data sent to a remote endpoint follows that provider's operation and terms.
+
+## Demonstration projects
+
+The Lantern Chronicles is a separate experimental RPG exploring AI-powered NPCs and knowledge-driven conversations through an external agent host.
+
+The game and its Character Packs are distributed separately and are not included in ORDIMENS.
+
+Dedicated Unity, Unreal Engine and Godot plugins are separate development work and are not included in this release. API-based integrations can be implemented independently.
+
+## Licensing
+
+The ORDIMENS core is proprietary and closed-source. This public repository does not grant an open-source licence to the application.
+
+The terms supplied with the release apply. Third-party components, runtimes and model weights retain their own licences.
 
 ## Feedback and contact
 
-For release feedback, bug reports, and support inquiries:
+When reporting a problem, include your operating system, application version, selected model and runtime, and a relevant log excerpt.
 
-**zetalvx_contact@proton.me**
+Remove credentials and connection codes before sharing logs.
 
-**ZetaLvX — AI Automation Lab**  
+**Contact:** zetalvx_contact@proton.me
+
+**ZetaLvX — AI Automation Lab**
+
 [YouTube](https://www.youtube.com/@zetalvx) · [Website](https://zetalvx.com)
